@@ -2,16 +2,21 @@
 @section('css')
     <style>
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
     </style>
 @endsection
 <div>
     <div class="page-heading">
         <h3>Dashboard</h3>
-    </div> 
-    <div class="page-content"> 
+    </div>
+    <div class="page-content">
         <section class="row">
             <div class="col-12 col-lg-12">
                 <div class="row">
@@ -28,12 +33,12 @@
                                         <h6 class="text-muted font-semibold">Total Laporan</h6>
                                         <h6 class="font-extrabold mb-0">{{ $totalLaporan }}</h6>
                                     </div>
-                                </div> 
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-6 col-lg-3 col-md-6">
-                        <div class="card"> 
+                        <div class="card">
                             <div class="card-body px-4 py-4-5">
                                 <div class="row">
                                     <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">

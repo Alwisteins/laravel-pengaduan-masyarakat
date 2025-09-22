@@ -12,21 +12,21 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // Buat Admin
-        User::create([
-            'name' => 'Admin',
-            'username' => 'admin',
-            'email' => 'admin@example.com',
-            'whatsapp' => '6281111111111',
-            'password' => Hash::make('password'),
-            'role' => 'admin',
-        ]);
+        // User::create([
+        //     'name' => 'Admin',
+        //     'username' => 'admin',
+        //     'email' => 'admin@example.com',
+        //     'whatsapp' => '6281111111111',
+        //     'password' => Hash::make('password'),
+        //     'role' => 'admin',
+        // ]);
 
-        // Buat User
-        $user = User::create([
-            'name' => 'User Demo',
-            'username' => 'userdemo',
-            'email' => 'user@example.com',
-            'whatsapp' => '6281222222222',
+        // // Buat User
+        User::create([
+            'name' => 'User Demo 2',
+            'username' => 'userdemo2',
+            'email' => 'user2@example.com',
+            'whatsapp' => '6282222222222',
             'password' => Hash::make('password'),
             'role' => 'user',
         ]);
@@ -39,6 +39,7 @@ class DatabaseSeeder extends Seeder
         //         'tanggal' => now()->subDays(10),
         //         'gambar' => 'jalan_rusak.jpg',
         //         'status' => 'pending',
+        //         'respon' => ''
         //     ],
         //     [
         //         'judul' => 'Lampu Jalan Mati',
@@ -46,6 +47,7 @@ class DatabaseSeeder extends Seeder
         //         'tanggal' => now()->subDays(9),
         //         'gambar' => 'lampu_jalan.jpg',
         //         'status' => 'pending',
+        //         'respon' => ''
         //     ],
         //     [
         //         'judul' => 'Sampah Menumpuk',
@@ -60,6 +62,7 @@ class DatabaseSeeder extends Seeder
         //         'tanggal' => now()->subDays(5),
         //         'gambar' => 'saluran_air.jpg',
         //         'status' => 'diproses',
+        //         'respon' => ''
         //     ],
         //     [
         //         'judul' => 'Pohon Tumbang',
@@ -81,7 +84,7 @@ class DatabaseSeeder extends Seeder
 
         // foreach ($laporans as $laporan) {
         //     Laporan::create(array_merge($laporan, [
-        //         'user_id' => $user->id,
+        //         'user_id' => User::where('role', 'user')->first()->id,
         //     ]));
         // }
     }

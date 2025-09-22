@@ -18,31 +18,37 @@ class Login extends Component
     public $password = '';
     public $remember = false;
 
-    public function login() {
+    public function login()
+    {
         $this->validate();
 
         $user = User::where('email', $this->idUser)
-        ->orWhere('username', $this->idUser)
-        ->orWhere('whatsapp', $this->idUser)
-        ->first();
+            ->orWhere('username', $this->idUser)
+            ->orWhere('whatsapp', $this->idUser)
+            ->first();
 
         if (! $user) {
             $this->addError('idUser', 'User tidak ditemukan');
             return;
         }
 
-        if(Auth::attempt(
+        if (Auth::attempt(
             [$this->getLoginField($user) => $this->idUser, 'password' => $this->password],
             $this->remember
         )) {
             session()->regenerate();
-            return $this->redirectIntended(route('admin.dashboard'), navigate: true);
+            if ($user->role == 'admin') {
+                return $this->redirectIntended(route('admin.dashboard'), navigate: true);
+            } else {
+                return $this->redirectIntended(route('user.dashboard'), navigate: true);
+            }
         }
 
         $this->addError('password', 'Password salah');
     }
 
-    private function getLoginField(User $user) {
+    private function getLoginField(User $user)
+    {
         return match (true) {
             $user->email === $this->idUser => 'email',
             $user->username === $this->idUser => 'username',

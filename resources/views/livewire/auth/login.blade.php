@@ -4,7 +4,8 @@
             <div id="auth-left">
                 <div class="auth-logo mb-4">
                     <a href="#">
-                        <img src="{{ asset('images/adu.png') }}" alt="Logo" class="img-fluid" style="width: 160px; height: auto;">
+                        <img src="{{ asset('images/adu.png') }}" alt="Logo" class="img-fluid"
+                            style="width: 160px; height: auto;">
                     </a>
                 </div>
 
@@ -17,13 +18,9 @@
                     {{-- ID Pengenal field --}}
                     <div class="form-group position-relative has-icon-left mb-4">
                         <label for="idUser" class="form-label visually-hidden">Username / Email / WhatsApp</label>
-                        <input
-                            wire:model.defer="idUser"
-                            type="text"
-                            id="idUser"
+                        <input wire:model.defer="idUser" type="text" id="idUser"
                             class="form-control form-control-xl @error('idUser') is-invalid @enderror"
-                            placeholder="Username / Email / WhatsApp"
-                            autocomplete="username">
+                            placeholder="Username / Email / WhatsApp" autocomplete="username">
                         <div class="form-control-icon">
                             <i class="bi bi-person"></i>
                         </div>
@@ -36,13 +33,9 @@
                     {{-- Password field --}}
                     <div class="form-group position-relative has-icon-left mb-4">
                         <label for="password" class="form-label visually-hidden">Password</label>
-                        <input
-                            wire:model.defer="password"
-                            type="password"
-                            id="password"
+                        <input wire:model.defer="password" type="password" id="password"
                             class="form-control form-control-xl @error('password') is-invalid @enderror"
-                            placeholder="Password"
-                            autocomplete="current-password">
+                            placeholder="Password" autocomplete="current-password">
                         <div class="form-control-icon">
                             <i class="bi bi-shield-lock"></i>
                         </div>
@@ -60,11 +53,8 @@
 
 
                     {{-- Submit button --}}
-                    <button
-                        type="submit"
-                        class="btn btn-primary btn-block btn-lg shadow-lg mt-3"
-                        wire:loading.attr="disabled"
-                        wire:target="login">
+                    <button type="submit" class="btn btn-primary btn-block btn-lg shadow-lg mt-3"
+                        wire:loading.attr="disabled" wire:target="login">
                         <span wire:loading.remove wire:target="login">Log in</span>
                         <span wire:loading wire:target="login">Loading...</span>
                     </button>
@@ -86,7 +76,3 @@
         </div>
     </div>
 </div>
-
-
-
-

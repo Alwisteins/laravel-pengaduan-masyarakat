@@ -1,10 +1,10 @@
 @section('title', 'Laporan')
 @section('css')
-<link rel="stylesheet" href="assets/extensions/simple-datatables/style.css">
+    <link rel="stylesheet" href="assets/extensions/simple-datatables/style.css">
 @endsection
 @section('js')
-<script src="mazer/assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
-<script src="mazer/assets/static/js/pages/simple-datatables.js"></script>
+    <script src="mazer/assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
+    <script src="mazer/assets/static/js/pages/simple-datatables.js"></script>
 @endsection
 
 <div>
@@ -14,7 +14,8 @@
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
                     <h3>DataTable</h3>
-                    <p class="text-subtitle text-muted">A sortable, searchable, paginated table without dependencies thanks to simple-datatables.</p>
+                    <p class="text-subtitle text-muted">A sortable, searchable, paginated table without dependencies
+                        thanks to simple-datatables.</p>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
@@ -283,7 +284,7 @@
                     </table>
                 </div>
             </div>
-    
+
         </section>
     </div>
 </div>
