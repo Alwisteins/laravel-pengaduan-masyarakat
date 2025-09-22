@@ -77,15 +77,12 @@
                     <li class="sidebar-item">
                         <a href="index.html" class='sidebar-link'>
                             <i class="bi bi-person-fill"></i>
-                            <span>Akun</span>
+                            <span>{{ Auth::user()->name }}</span>
                         </a>
                     </li>
-                    <li class="sidebar-item">
-                        <a href="index.html" class='sidebar-link'>
-                            <i class="bi bi-box-arrow-left"></i>
-                            <span>Keluar</span>
-                        </a>
-                    </li>
+
+                    <livewire:auth.logout />
+
                     {{-- <li
                     class="sidebar-item  has-sub">
                     <a href="#" class='sidebar-link'>

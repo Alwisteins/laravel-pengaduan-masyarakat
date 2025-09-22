@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Actions\Logout;
 use App\Livewire\Admin\DashboardAdmin;
 use App\Livewire\Admin\LaporanAdmin;
 use App\Livewire\Auth\Login;
@@ -21,6 +22,7 @@ Route::get('/', function () {
 })->name('index');
 
 Route::get('/auth/login', Login::class)->name('login');
+Route::get('/auth/logout', Logout::class)->name('logout');
 
 Route::prefix('admin')->middleware(['auth', 'admin'])->name('admin.')->group(function () {
     Route::get('/', DashboardAdmin::class)->name('dashboard');
