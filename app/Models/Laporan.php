@@ -16,7 +16,17 @@ class Laporan extends Model
         'respon',
     ];
 
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo(User::class);
+    }
+
+    public function getStatusClassAttribute()
+    {
+        return match ($this->status) {
+            'Selesai' => 'bg-success',
+            'Diproses' => 'bg-warning',
+            default => 'bg-danger',
+        };
     }
 }

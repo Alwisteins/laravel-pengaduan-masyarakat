@@ -37,8 +37,7 @@
                                 <td>{{ $laporan->judul }}</td>
                                 <td>{{ $laporan->user->name }}</td>
                                 <td>
-                                    <span
-                                        class="badge {{ $laporan->status === 'Selesai' ? 'bg-success' : ($laporan->status === 'Diproses' ? 'bg-warning' : 'bg-danger') }}">
+                                    <span class="badge {{ $laporan->status_class }}">
                                         {{ $laporan->status }}
                                     </span>
                                 </td>
