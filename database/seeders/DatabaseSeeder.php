@@ -22,11 +22,20 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         // // Buat User
+        // User::create([
+        //     'name' => 'User Demo 2',
+        //     'username' => 'userdemo2',
+        //     'email' => 'user2@example.com',
+        //     'whatsapp' => '6282222222222',
+        //     'password' => Hash::make('password'),
+        //     'role' => 'user',
+        // ]);
+
         User::create([
-            'name' => 'User Demo 2',
-            'username' => 'userdemo2',
-            'email' => 'user2@example.com',
-            'whatsapp' => '6282222222222',
+            'name' => 'Admin',
+            'username' => 'admin',
+            'email' => 'admin@example.com',
+            'whatsapp' => '6282222222221',
             'password' => Hash::make('password'),
             'role' => 'user',
         ]);

@@ -5,37 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Dashboard')</title>
-
-    <link rel="shortcut icon" href="{{ asset('/images/cs.png') }}" type="image/x-icon">
-
+    <link rel="shortcut icon" href="{{ asset('images/cs.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('mazer/assets/compiled/css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('mazer/assets/compiled/css/app-dark.css') }}">
     <link rel="stylesheet" href="{{ asset('mazer/assets/compiled/css/iconly.css') }}">
-    @yield('css')
-</head>
+    @stack('css')
+    
 
 <body>
     <script src="{{ asset('mazer/assets/static/js/initTheme.js') }}"></script>
     <div id="app">
-        <livewire:atom.sidebar />
-
-        <div id="main">
-            <header class="mb-3">
-                <a href="#" class="burger-btn d-block d-xl-none">
-                    <i class="bi bi-justify fs-3"></i>
-                </a>
+        <div id="main" class="layout-horizontal">
+            <header class="mb-5">
+                <livewire:front.atom.header />
+                <livewire:front.atom.navbar />
             </header>
 
-            {{ $slot }}
+            <div class="content-wrapper container">
 
-            <livewire:atom.footer />
+                {{ $slot }}
+
+            </div>
+            <livewire:front.atom.footer />
         </div>
     </div>
-
+    <script src="{{ asset('mazer/assets/static/js/pages/horizontal-layout.js') }}"></script>
     <script src="{{ asset('mazer/assets/static/js/components/dark.js') }}"></script>
     <script src="{{ asset('mazer/assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('mazer/assets/compiled/js/app.js') }}"></script>
-    <!-- Need: Apexcharts -->
     <script src="{{ asset('mazer/assets/extensions/apexcharts/apexcharts.min.js') }}"></script>
     <script src="{{ asset('mazer/assets/static/js/pages/dashboard.js') }}"></script>
     @stack('js')
